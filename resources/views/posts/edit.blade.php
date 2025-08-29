@@ -13,13 +13,23 @@
         </div>
     @endif
 
-    <form action="{{ route('posts.update', $post->id) }}" method="POST">
+    <form action="{{ route('posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <label>Title:</label>
-        <input type="text" name="title" value="{{ $post->title }}">
-        <label>Content:</label>
-        <textarea name="content">{{ $post->content }}</textarea>
+        <div class="from group mb-3">
+            <label>image</label>
+            <input class="form-control"  type="file" name="image">
+        </div>
+
+        <div class="from group mb-3">
+            <label>Title</label>
+            <input class="form-control"  type="text" name="title" value="{{ $post->title }}">
+        </div>
+
+        <div class="from group mb-3">
+            <label>Content</label>
+            <textarea class="form-control" name="content">{{ $post->content }}</textarea>
+        </div>
 
         <button type="submit">Submit</button>
     </form>
