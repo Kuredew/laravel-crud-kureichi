@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form class="card-body" action="{{route('posts.store') }}" method="POST">
+    <form class="card-body" action="{{route('posts.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="from group mb-3">
             <label>image</label>
