@@ -26,7 +26,7 @@
         </div>
 
         <div class="from group mb-3">
-            <label>Content:</label>
+            <label>Content</label>
             <textarea class="form-control" name="content">{{ old('content') }}</textarea>
         </div>
 
