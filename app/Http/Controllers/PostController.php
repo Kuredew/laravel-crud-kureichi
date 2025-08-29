@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Container\Attributes\Storage;
 use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Catch_;
 
 class PostController extends Controller
 {

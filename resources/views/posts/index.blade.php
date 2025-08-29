@@ -12,6 +12,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
+                <th>Image</th>
                 <th>Title</th>
                 <th>Content</th>
                 <th>Action</th>
@@ -20,6 +21,11 @@
         <tbody>
             @foreach ($posts as $post)
                 <tr>
+                    <td>
+                        @if ($post->image)
+                            <img src="{{ asset('storage/images/'. $post->image) }}" alt="image">
+                        @endif
+                    </td>
                     <td>{{ $post->title }} </td>
                     <td>{{ $post->content }} </td>
                     <td>
