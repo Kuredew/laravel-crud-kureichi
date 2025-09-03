@@ -44,10 +44,10 @@ class PostController extends Controller
 
             //simpan data ke database
             Post::create([
-                'image' -> $imagePath,
-                'title' -> $request->input('title'),
-                'content' -> $request->input('content'),
-                'genre' -> $request->input('genre')
+                'image' => $imagePath,
+                'title' => $request->input('title'),
+                'content' => $request->input('content'),
+                'genre' => $request->input('genre')
             ]);
 
             //redirect kembali ke halaman index dengan pesan sukses
