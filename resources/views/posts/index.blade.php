@@ -23,7 +23,7 @@
                 <tr>
                     <td>
                         @if ($post->image)
-                            <img src="{{ asset('storage/images/'. $post->image) }}" alt="image">
+                            <img src="{{ asset('storage/images/'. $post->image) }}" alt="image" style="min-height: 150px; max-height: 150px;">
                         @endif
                     </td>
                     <td>{{ $post->title }} </td>
@@ -34,7 +34,7 @@
                         <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Delete</button>
+                            <button class="btn-danger" type="submit">Delete</button>
 
                         </form>
                     </td>

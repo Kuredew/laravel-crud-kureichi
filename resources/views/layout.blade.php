@@ -242,15 +242,9 @@
           <div class="menu-container flex-grow-1">
             <ul id="menu" class="menu">
               <li>
-                <a href="Horizontal.html">
+                <a href=" {{ route('posts.index')}}">
                   <i data-acorn-icon="grid-2" class="icon" data-acorn-size="18"></i>
-                  <span class="label">Horizontal</span>
-                </a>
-              </li>
-              <li>
-                <a href="Vertical.html">
-                  <i data-acorn-icon="grid-3" class="icon" data-acorn-size="18"></i>
-                  <span class="label">Vertical</span>
+                  <span class="label">Post</span>
                 </a>
               </li>
             </ul>
