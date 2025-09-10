@@ -19,4 +19,4 @@ Route::controller(LoginRegisterController::class)->group(function() {
 });
 
 
-Route::resource('posts', PostController::class);
+Route::resource('posts', PostController::class)->middleware('auth');

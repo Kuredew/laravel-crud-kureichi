@@ -3,11 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Container\Attributes\Storage;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('guest', except: ['home', 'logout']),
+            new Middleware('auth', only: ['home', 'logout'])
+        ];
+    }
     /**
      * Display a listing of the resource.
      */
