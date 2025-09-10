@@ -17,7 +17,7 @@ class LoginRegisterController extends Controller
     {
         return [
             new Middleware('guest', except: ['home', 'logout']),
-            new Middleware('auth', only: ['home', 'logout']),
+            new Middleware('auth', only: ['home', 'logout'])
         ];
     }
 
@@ -74,9 +74,9 @@ class LoginRegisterController extends Controller
     }
     
     // Buat Home
-    public function home(): View
+    public function home(): RedirectResponse
     {
-        return view('auth.home');
+        return redirect()->route('posts.index');
     } 
 
     public function logout(Request $request): RedirectResponse
