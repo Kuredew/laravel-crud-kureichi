@@ -28,7 +28,7 @@ class LoginRegisterController extends Controller
         return view('auth.register');
     }
 
-    public function store(Request $request) : void
+    public function store(Request $request) : RedirectResponse
     {
         $request->validate([
             'name' => 'required|string|max:250',
@@ -46,6 +46,7 @@ class LoginRegisterController extends Controller
         Auth::attempt($credentials);
         $request->session()->regenerate();
 
+        return redirect()->route('home');
    }
 
     // Buat login

@@ -33,13 +33,13 @@
             <label>Genre</label>
             <select class="form-control" name="genre" id="">
                 <option value="Romance">Romance</option>
-                <option value="Romance">Action</option>
-                <option value="Romance">Advanture</option>
-                <option value="Romance">Isekai</option>
+                <option value="Action">Action</option>
+                <option value="Advanture">Advanture</option>
+                <option value="Isekai">Isekai</option>
             </select>
         </div>
 
 
-        <button type="submit" class="btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection
