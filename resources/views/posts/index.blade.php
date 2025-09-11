@@ -15,8 +15,8 @@
                 <th>Image</th>
                 <th>Title</th>
                 <th>Content</th>
-                <th>Action</th>
                 <th>Genre</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@
                         <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button class="btn-danger" type="submit">Delete</button>
+                            <button class="btn btn-danger" type="submit">Delete</button>
 
                         </form>
                     </td>
