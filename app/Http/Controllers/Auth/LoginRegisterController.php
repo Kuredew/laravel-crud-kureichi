@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\Middleware;
@@ -17,7 +18,7 @@ class LoginRegisterController extends Controller
     {
         return [
             new Middleware('guest', except: ['home', 'logout']),
-            new Middleware('auth', only: ['home', 'logout'])
+            new Middleware('auth', only: ['home', 'logout', 'register'])
         ];
     }
 
@@ -27,7 +28,7 @@ class LoginRegisterController extends Controller
         return view('auth.register');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request) : void
     {
         $request->validate([
             'name' => 'required|string|max:250',
@@ -44,9 +45,8 @@ class LoginRegisterController extends Controller
         $credentials = $request->only('email', 'password');
         Auth::attempt($credentials);
         $request->session()->regenerate();
-        return redirect()->route('home')
-            ->withSuccess('You have successfully registered & logged in!');
-    }
+
+   }
 
     // Buat login
     public function login(): View

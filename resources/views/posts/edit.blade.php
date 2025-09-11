@@ -30,6 +30,16 @@
             <label>Content</label>
             <textarea class="form-control" name="content">{{ $post->content }}</textarea>
         </div>
+        <div class="from group mb-3">
+            <label>Genre</label>
+            <select class="form-control" name="genre" id="">
+                <option value="Romance">Romance</option>
+                <option value="Romance">Action</option>
+                <option value="Romance">Advanture</option>
+                <option value="Romance">Isekai</option>
+            </select>
+        </div>
+
 
         <button type="submit">Submit</button>
     </form>

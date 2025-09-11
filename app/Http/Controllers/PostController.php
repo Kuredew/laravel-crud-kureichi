@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Routing\Controllers\Middleware;
-use Illuminate\Container\Attributes\Storage;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -98,7 +98,7 @@ class PostController extends Controller
             $imagePath = $post->image;
             if ($request->hasFile('image')) {
                 if ($imagePath) {
-                    Storage::disk("public")->delete('images/', $imagePath);
+                    Storage::disk("public")->delete('images/' + $imagePath);
                 }
                 $image = $request->file('image');
                 $imageName = $image->hashName();
@@ -126,7 +126,7 @@ class PostController extends Controller
     {
         $imagePath = $post->image;
         if ($imagePath) {
-            Storage::disk("public")->delete('images/', $imagePath);
+            Storage::disk("public")->delete('images/' + $imagePath);
         }
 
         $post->delete();

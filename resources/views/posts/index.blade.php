@@ -16,6 +16,7 @@
                 <th>Title</th>
                 <th>Content</th>
                 <th>Action</th>
+                <th>Genre</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,7 @@
                     </td>
                     <td>{{ $post->title }} </td>
                     <td>{{ $post->content }} </td>
+                    <td>{{ $post->genre }} </td>
                     <td>
                         <a href="{{ route('posts.show', $post->id) }}">Show</a>
                         <a href="{{ route('posts.edit', $post->id) }}">Edit</a>
