@@ -80,7 +80,7 @@
           <!-- User Menu Start -->
           <div class="user-container d-flex">
             <a href="#" class="d-flex user position-relative" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img class="profile" alt="profile" src="img/profile/profile-9.webp" />
+              <img class="profile" alt="profile" src="{{ asset('img/profile/profile-9.webp') }}" />
               <div class="name">Muhamad Habiburohman</div>
             </a>
             <div class="dropdown-menu dropdown-menu-end user-menu wide">
@@ -245,6 +245,12 @@
                 <a href=" {{ route('posts.index')}}">
                   <i data-acorn-icon="grid-2" class="icon" data-acorn-size="18"></i>
                   <span class="label">Post</span>
+                </a>
+              </li>
+              <li>
+                <a href=" {{ route('genre.index')}}">
+                  <i data-acorn-icon="grid-2" class="icon" data-acorn-size="18"></i>
+                  <span class="label">Genre</span>
                 </a>
               </li>
             </ul>

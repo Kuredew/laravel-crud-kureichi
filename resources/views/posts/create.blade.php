@@ -32,10 +32,9 @@
         <div class="from group mb-3">
             <label>Genre</label>
             <select class="form-control" name="genre" id="">
-                <option value="Romance">Romance</option>
-                <option value="Action">Action</option>
-                <option value="Advanture">Advanture</option>
-                <option value="Isekai">Isekai</option>
+                @foreach ($genres as $genre)
+                <option value="{{ $genre->genre }}">{{ $genre->genre }}</option>
+                @endforeach
             </select>
         </div>
 

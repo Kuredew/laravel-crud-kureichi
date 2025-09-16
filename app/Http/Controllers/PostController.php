@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genre;
 use App\Models\Post;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Storage;
@@ -30,7 +31,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $genres = Genre::all();
+        return view('posts.create', compact('genres'));
     }
 
     /**
@@ -79,7 +81,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('posts.edit', compact('post'));
+        $genres = Genre::all();
+        return view('posts.edit', compact('post', 'genres'));
     }
 
     /**
@@ -95,21 +98,21 @@ class PostController extends Controller
                 'genre' => 'nullable|string', //kolom genre yg baru ditambahkan
             ]);
 
-            $imagePath = $post->image;
+            $imageName = $post->image;
             if ($request->hasFile('image')) {
-                if ($imagePath) {
-                    Storage::disk("public")->delete('images/' + $imagePath);
+                if ($imageName) {
+                    Storage::disk("public")->delete('images/' . $imageName);
                 }
                 $image = $request->file('image');
                 $imageName = $image->hashName();
-                $imagePath = $image->storeAs('public/images', $imageName);
+                $image->storeAs('/images', $imageName, 'public');
             }
 
             $post->update([
                 'title'=> $validatedData['title'],
                 'content' => $validatedData['content'],
                 'genre' => $validatedData['genre'],
-                'image' => $imagePath
+                'image' => $imageName
             ]);
 
             return redirect()->route('posts.index')

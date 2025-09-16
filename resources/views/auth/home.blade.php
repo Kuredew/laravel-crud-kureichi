@@ -247,6 +247,12 @@
                   <span class="label">Post</span>
                 </a>
               </li>
+              <li>
+                <a href=" {{ route('genre.index')}}">
+                  <i data-acorn-icon="grid-2" class="icon" data-acorn-size="18"></i>
+                  <span class="label">Genre</span>
+                </a>
+              </li>
             </ul>
           </div>
           <!-- Menu End -->

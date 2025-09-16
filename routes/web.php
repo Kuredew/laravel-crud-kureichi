@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Auth\LoginRegisterController;
@@ -14,5 +15,5 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/logout', 'logout')->name('logout');
 });
 
-
+Route::resource('genre', GenreController::class)->middleware('auth');
 Route::resource('posts', PostController::class)->middleware('auth');
