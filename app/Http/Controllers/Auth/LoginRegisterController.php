@@ -75,9 +75,9 @@ class LoginRegisterController extends Controller
     }
     
     // Buat Home
-    public function home(): RedirectResponse
+    public function home(): View
     {
-        return redirect()->route('posts.index');
+        return view('auth.home');
     } 
 
     public function logout(Request $request): RedirectResponse
