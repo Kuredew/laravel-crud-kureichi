@@ -14,11 +14,12 @@
         </div>
     @endif
 
-    <form class="card-body" action="{{route('genre.store') }}" method="POST" enctype="multipart/form-data">
+    <form class="card-body" action="{{route('genre.update', $genre->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <div class="from group mb-3">
             <label>Nama Genre</label>
-            <input class="form-control"  type="text" name="genre" value="{{ old('title') }}">
+            <input class="form-control"  type="text" name="genre" value="{{ $genre->genre }}">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

@@ -25,7 +25,9 @@ class GenreController extends Controller
     public function create() {
         return View('genre.create');
     }
-
+    public function edit(Genre $genre) {
+        return View('genre.edit', compact('genre'));
+    }
     public function store(Request $request):RedirectResponse {
         $validatedData = $request->validate([
             'genre' => 'required',
@@ -34,8 +36,17 @@ class GenreController extends Controller
         Genre::create($validatedData);
         return redirect()->route('genre.index');
     }
+    
+    public function update(Request $request, Genre $genre):RedirectResponse {
+        $validatedData = $request->validate([
+            'genre' => 'required',
+        ]);
 
-    public function destroy(Genre $genre) {
+        $genre->update($validatedData);
+        return redirect()->route('genre.index');
+    }
+
+    public function destroy(Genre $genre): RedirectResponse {
         $genre->delete();
         return redirect()->route('genre.index');
     }

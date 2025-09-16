@@ -1,5 +1,6 @@
 @extends('layout')
 
+@section('title', 'Tambah Posts')
 @section('content')
     <h1>Create Post</h1>
 
@@ -33,7 +34,7 @@
             <label>Genre</label>
             <select class="form-control" name="genre" id="">
                 @foreach ($genres as $genre)
-                <option value="{{ $genre->genre }}">{{ $genre->genre }}</option>
+                <option value="{{ $genre->id }}">{{ $genre->genre }}</option>
                 @endforeach
             </select>
         </div>

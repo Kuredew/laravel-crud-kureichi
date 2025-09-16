@@ -1,4 +1,5 @@
 @extends('layout')
+@section('title', 'Daftar Posts')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 @section('content')
     <h1>Posts</h1>
@@ -29,7 +30,7 @@
                     </td>
                     <td>{{ $post->title }} </td>
                     <td>{{ $post->content }} </td>
-                    <td>{{ $post->genre }} </td>
+                    <td>{{ $genres->where('id', $post->genre)[1]->genre }} </td>
                     <td>
                         <a href="{{ route('posts.show', $post->id) }}">Show</a>
                         <a href="{{ route('posts.edit', $post->id) }}">Edit</a>

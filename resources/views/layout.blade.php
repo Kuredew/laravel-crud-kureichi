@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Acorn Admin Template | Vertical Menu</title>
+    <title>METIK | @yield('title')</title>
     <meta name="description" content="An empty page with a fluid vertical layout." />
     <!-- Favicon Tags Start -->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('img/favicon/apple-touch-icon-57x57.png') }}" />
@@ -56,7 +56,7 @@
         <div class="nav-content d-flex">
           <!-- Logo Start -->
           <div class="logo position-relative">
-            <a href="index.html">
+            <a href="{{ route('home') }}">
               <!-- Logo can be added directly -->
               <!-- <img src="img/logo/logo-white.svg" alt="logo" /> -->
 
@@ -80,7 +80,7 @@
           <!-- User Menu Start -->
           <div class="user-container d-flex">
             <a href="#" class="d-flex user position-relative" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img class="profile" alt="profile" src="{{ asset('img/profile/profile-9.webp') }}" />
+              <img class="profile" alt="profile" src="{{ asset('img/profile/download.jpg') }}" />
               <div class="name">Muhamad Habiburohman</div>
             </a>
             <div class="dropdown-menu dropdown-menu-end user-menu wide">
@@ -287,10 +287,10 @@
             <div class="row">
               <!-- Title Start -->
               <div class="col-12 col-md-7">
-                <h1 class="mb-0 pb-0 display-4" id="title">Vertical Starter Page</h1>
+                <h1 class="mb-0 pb-0 display-4" id="title">@yield('title')</h1>
                 <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
                   <ul class="breadcrumb pt-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                   </ul>
                 </nav>
               </div>

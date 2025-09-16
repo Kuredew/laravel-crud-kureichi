@@ -1,5 +1,6 @@
 @extends('layout')
 
+@section('title', 'Show Posts')
 @section('content')
     @if ($post->image)
         <img src="{{ asset('storage/images/'. $post->image) }}" alt="image" style="min-height: 150px; max-height: 150px;">
