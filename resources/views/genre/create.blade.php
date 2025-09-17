@@ -18,7 +18,7 @@
         @csrf
         <div class="from group mb-3">
             <label>Nama Genre</label>
-            <input class="form-control"  type="text" name="genre" value="{{ old('title') }}">
+            <input class="form-control"  type="text" name="genre" value="{{ old('genre') }}">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
