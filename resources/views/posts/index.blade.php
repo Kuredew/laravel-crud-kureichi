@@ -30,7 +30,11 @@
                     </td>
                     <td>{{ $post->title }} </td>
                     <td>{{ $post->content }} </td>
-                    <td>{{ $genres->where('id', $post->genre)[1]->genre }} </td>
+                    <td>
+                    @if ($genres->find($post->genre))
+                        {{ $genres->find($post->genre)->genre }}
+                    @endif
+                    </td> 
                     <td>
                         <a href="{{ route('posts.show', $post->id) }}" class="btn btn-dark">Show</a>
                         <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info">Edit</a>

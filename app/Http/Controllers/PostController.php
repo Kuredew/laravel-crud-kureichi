@@ -51,7 +51,7 @@ class PostController extends Controller
 
             $image = $request->file('image');
             $imageName = $image->hashName();
-            $imagePath = $image->storeAs('/images', $imageName, 'public');
+            $image->storeAs('/images', $imageName, 'public');
 
             //simpan data ke database
             Post::create([

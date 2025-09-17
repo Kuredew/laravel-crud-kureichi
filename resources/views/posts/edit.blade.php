@@ -38,7 +38,7 @@
             <label>Genre</label>
             <select class="form-control" name="genre" id="">
                 @foreach ($genres as $genre)
-                <option value="{{ $genre->id }}">{{ $genre->genre }}</option>
+                <option value="{{ $genre->id }}" @if ($genre->id == $post->genre) selected @endif>{{ $genre->genre }}</option>
                 @endforeach
             </select>
         </div>
