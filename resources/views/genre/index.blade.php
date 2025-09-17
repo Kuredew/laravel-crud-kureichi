@@ -27,7 +27,7 @@
                     <td>{{ $genre->id }} </td>
                     <td>{{ $genre->genre }} </td>
                     <td>
-                        <a href="{{ route('genre.edit', $genre->id) }}">Edit</a>
+                        <a href="{{ route('genre.edit', $genre->id) }}" class="btn btn-info">Edit</a>
                         <form action="{{ route('genre.destroy', $genre->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')

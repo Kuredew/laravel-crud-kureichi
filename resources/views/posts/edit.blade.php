@@ -17,6 +17,9 @@
     <form action="{{ route('posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
+        @if ($post->image)
+            <img src="{{ asset('storage/images/'. $post->image) }}" alt="image" style="min-height: 150px; max-height: 150px;">
+        @endif
         <div class="from group mb-3">
             <label>image</label>
             <input class="form-control"  type="file" name="image">

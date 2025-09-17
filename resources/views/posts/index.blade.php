@@ -32,8 +32,8 @@
                     <td>{{ $post->content }} </td>
                     <td>{{ $genres->where('id', $post->genre)[1]->genre }} </td>
                     <td>
-                        <a href="{{ route('posts.show', $post->id) }}">Show</a>
-                        <a href="{{ route('posts.edit', $post->id) }}">Edit</a>
+                        <a href="{{ route('posts.show', $post->id) }}" class="btn btn-dark">Show</a>
+                        <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info">Edit</a>
                         <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
